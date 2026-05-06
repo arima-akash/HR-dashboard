@@ -19,7 +19,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             const res = await axios.get(
-                "http://localhost:5000/api/hr/applications",
+                `${import.meta.env.VITE_API_URL}/api/hr/applications`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             const res = await axios.get(
-                "http://localhost:5000/api/submissions",
+                `${import.meta.env.VITE_API_URL}/api/submissions`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             await axios.patch(
-                `http://localhost:5000/api/hr/applications/${id}/accept`,
+                `${import.meta.env.VITE_API_URL}/api/hr/applications/${id}/accept`,
                 {},
                 {
                     headers: {
@@ -84,7 +84,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             await axios.patch(
-                `http://localhost:5000/api/hr/applications/${id}/reject`,
+                `${import.meta.env.VITE_API_URL}/api/hr/applications/${id}/reject`,
                 {},
                 {
                     headers: {
@@ -107,7 +107,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             await axios.patch(
-                `http://localhost:5000/api/hr/applications/${id}/reset-password`,
+                `${import.meta.env.VITE_API_URL}/api/hr/applications/${id}/reset-password`,
                 {},
                 {
                     headers: {
@@ -129,7 +129,7 @@ function HRDashboard() {
             const token = localStorage.getItem("hrToken");
 
             await axios.post(
-                "http://localhost:5000/api/tasks",
+                `${import.meta.env.VITE_API_URL}/api/tasks`,
                 {
                     title,
                     description,
@@ -235,7 +235,7 @@ function HRDashboard() {
 
                             <td className="p-3">
                                 <a
-                                    href={`http://localhost:5000/${sub.candidateId?.resume}`}
+                                    href={`${import.meta.env.VITE_API_URL}/${sub.candidateId?.resume}`}
                                     target="_blank"
                                     className="text-orange-400"
                                 >

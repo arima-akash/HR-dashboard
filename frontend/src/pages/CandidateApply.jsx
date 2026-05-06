@@ -32,7 +32,7 @@ function CandidateApply() {
         data.append("resume", resume);
 
         try {
-            axios.post("http://localhost:5000/api/applications/apply", data)
+            axios.post(`${import.meta.env.VITE_API_URL}/api/applications/apply`, data)
 
             alert("Application submitted successfully");
 
