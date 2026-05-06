@@ -19,7 +19,7 @@ function CandidateDashboard() {
                 console.log("TOKEN:", token); // debug
 
                 const res = await axios.get(
-                    "http://localhost:5000/api/tasks/my-task",
+                    `${import.meta.env.VITE_API_URL}/api/tasks/my-task`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ function CandidateDashboard() {
             const token = localStorage.getItem("candidateToken");
 
             await axios.post(   
-                "http://localhost:5000/api/submissions",
+                `${import.meta.env.VITE_API_URL}/api/submissions`,
                 {
                     githubLink
                 },
